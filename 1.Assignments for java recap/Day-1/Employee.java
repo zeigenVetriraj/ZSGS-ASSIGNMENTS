@@ -16,9 +16,9 @@ public class Employee{
 
     public void display(){
         System.out.println("Employee Id : "+empId);
-        System.out.println("Name : "+name);
-        System.out.println("Department : "+department);
-        System.out.println("salary : "+empId);
+        System.out.println("Name        : "+name);
+        System.out.println("Department  : "+department);
+        System.out.println("Salary      : "+empId);
     }
 
     public static void main(String[] args){
