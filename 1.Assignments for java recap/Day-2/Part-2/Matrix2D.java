@@ -12,7 +12,6 @@ import java.util.Scanner;
 
 public class Matrix2D {
 
-    // Method to input matrix
     public static void inputMatrix(int[][] matrix, int m, int n, Scanner sc) {
         System.out.println("Enter elements of the matrix:");
         for (int i = 0; i < m; i++) {
@@ -23,7 +22,6 @@ public class Matrix2D {
         }
     }
 
-    // Method to display matrix
     public static void displayMatrix(int[][] matrix, int m, int n) {
         System.out.println("Matrix:");
         for (int i = 0; i < m; i++) {
@@ -34,7 +32,6 @@ public class Matrix2D {
         }
     }
 
-    // Method to calculate total sum
     public static void sumMatrix(int[][] matrix, int m, int n) {
         int total = 0;
         for (int[] row : matrix) {
@@ -45,7 +42,6 @@ public class Matrix2D {
         System.out.println("Sum of all elements: " + total);
     }
 
-    // Method to display row-wise sum
     public static void rowWiseSum(int[][] matrix, int m, int n) {
         System.out.println("Row-wise sum:");
         for (int i = 0; i < m; i++) {
@@ -57,7 +53,6 @@ public class Matrix2D {
         }
     }
 
-    // Method to display column-wise sum
     public static void colWiseSum(int[][] matrix, int m, int n) {
         System.out.println("Column-wise sum:");
         for (int j = 0; j < n; j++) {
@@ -69,7 +64,6 @@ public class Matrix2D {
         }
     }
 
-    // Method to transpose matrix
     public static void transposeMatrix(int[][] matrix, int m, int n) {
         System.out.println("Transpose of the matrix:");
         for (int j = 0; j < n; j++) {
@@ -90,46 +84,22 @@ public class Matrix2D {
 
         int[][] matrix = new int[m][n];
 
-        int choice;
-        do {
-            System.out.println("\n--- MENU ---");
-            System.out.println("1. Input Matrix");
-            System.out.println("2. Display Matrix");
-            System.out.println("3. Sum of all elements");
-            System.out.println("4. Row-wise sum");
-            System.out.println("5. Column-wise sum");
-            System.out.println("6. Transpose Matrix");
-            System.out.println("7. Exit");
-            System.out.print("Enter your choice: ");
-            choice = sc.nextInt();
-
-            switch (choice) {
-                case 1:
-                    inputMatrix(matrix, m, n, sc);
-                    break;
-                case 2:
-                    displayMatrix(matrix, m, n);
-                    break;
-                case 3:
-                    sumMatrix(matrix, m, n);
-                    break;
-                case 4:
-                    rowWiseSum(matrix, m, n);
-                    break;
-                case 5:
-                    colWiseSum(matrix, m, n);
-                    break;
-                case 6:
-                    transposeMatrix(matrix, m, n);
-                    break;
-                case 7:
-                    System.out.println("Exiting program.");
-                    break;
-                default:
-                    System.out.println("Invalid choice! Try again.");
-            }
-
-        } while (choice != 7);
+        inputMatrix(matrix,m,n,sc);
+		
+		System.out.println("-----------------------------------");
+		displayMatrix(matrix, m, n);
+		
+		System.out.println("-----------------------------------");
+		sumMatrix(matrix, m, n);
+		
+		System.out.println("-----------------------------------");
+		rowWiseSum(matrix, m, n);
+		
+		System.out.println("-----------------------------------");
+		colWiseSum(matrix, m, n);
+		
+		System.out.println("-----------------------------------");
+		transposeMatrix(matrix, m, n);
         
         sc.close();
     }
