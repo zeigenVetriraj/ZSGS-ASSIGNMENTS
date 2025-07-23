@@ -25,21 +25,21 @@ public class Pattern2 {
 
         sc.nextLine(); // consume newline
 
-		System.out.print("Enter the character: ");
-		char ch = sc.nextLine().charAt(0);
+	System.out.print("Enter the character: ");
+	char ch = sc.nextLine().charAt(0);
+	
+	int i = 1;
+	while (i <= num) {
+		int j = 1;
+		int limit = (i <= (num / 2 + 1)) ? i : (num - i + 1);
 		
-		int i = 1;
-		while (i <= num) {
-			int j = 1;
-			int limit = (i <= (num / 2 + 1)) ? i : (num - i + 1);
-			
-			while (j <= limit) {
-				System.out.print(ch + " ");
-				j++;
-			}
-			System.out.println();
-			i++;
+		while (j <= limit) {
+			System.out.print(ch + " ");
+			j++;
 		}
+		System.out.println();
+		i++;
+	}
 
     }
 }
