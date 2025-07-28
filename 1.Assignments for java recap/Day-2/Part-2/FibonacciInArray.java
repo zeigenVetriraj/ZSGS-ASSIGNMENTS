@@ -1,9 +1,8 @@
-import java.util.Scanner;
+
 
 //3. Write a program which generates 30 terms of Fibonacci no in an array and then prints it.
 public class FibonacciInArray{
 	public static void main(String[] args){
-		Scanner sc = new Scanner(System.in);
 		
 		int[] fibo = new int[30]; //creating the array to store the fibonacci values
 		fibo[0] = 0;
