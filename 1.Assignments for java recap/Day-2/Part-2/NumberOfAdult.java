@@ -11,8 +11,8 @@ public class NumberOfAdult{
 		
 		//geting the age in the array
 		for(int i=0; i<10; i++){
-			System.out.print("Enter the "+(i+1)+" Person weight : ");
-			arr[i] = sc.nextInt();
+			System.out.print("Enter the "+(i+1)+" Person Age : ");
+			ages[i] = sc.nextInt();
 		}
 		
 		int under18=0,between18to60=0,above60=0;
