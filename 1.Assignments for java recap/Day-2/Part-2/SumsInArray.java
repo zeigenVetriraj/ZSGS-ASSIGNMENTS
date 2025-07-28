@@ -21,7 +21,7 @@ public class SumsInArray{
 		print(nums, len);
 	}
 	
-	// creating the method(function) to calculate two sums
+	// creating the method to calculate two sums
 	public static void print(int[] nums, int len){
 		int singleNum = 0;
 		int doubleNum = 0;
