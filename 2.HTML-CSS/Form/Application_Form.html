@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Application Form</h1>
+    <form action="/submit" method="post">
+      
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" class="form-field" name="name" required autocomplete="name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" class="form-field" name="email" required autocomplete="email">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" class="form-field" name="phone" required autocomplete="tel">
+      </div>
+
+      <div class="form-group">
+        <span>Gender:</span>
+        <label><input type="radio" name="gender" value="male" required> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+        <label><input type="radio" name="gender" value="other"> Other</label>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" class="form-field" name="dob" required autocomplete="bday">
+      </div>
+
+      <div class="form-group">
+        <label for="nationality">Nationality:</label>
+        <select id="nationality" class="form-field" name="nationality" required>
+          <option value="">Select...</option>
+          <option value="indian">Indian</option>
+          <option value="american">American</option>
+          <option value="british">British</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="street-address">Address:</label>
+        <input type="text" id="street-address" name="street-address" class="form-field" placeholder="Address Line 1" required autocomplete="address-line1">
+        <input type="text" name="address-line2" class="form-field" placeholder="Address Line 2" autocomplete="address-line2">
+        <input type="text" name="city" class="form-field" placeholder="City" required autocomplete="address-level2">
+        <input type="text" name="state" class="form-field" placeholder="State" required autocomplete="address-level1">
+        <input type="text" name="postal-code" class="form-field" placeholder="Pin Code" required autocomplete="postal-code">
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Submit" onclick="validateForm()">
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+    const phone = document.getElementById("phone").value.trim();
+    const dob = document.getElementById("dob").value;
+    const email = document.getElementById("email").value.trim();
+
+    let errors = [];
+
+    if (phone.length !== 10) {
+      errors.push("Phone number must be exactly 10 digits.");
+    }
+
+    if (dob) {
+      const dobDate = new Date(dob);
+      const minDate = new Date("1900-01-01");
+      const today = new Date();
+
+      if (dobDate < minDate || dobDate > today) {
+        errors.push("Date of Birth must be between 1900 and today.");
+      }
+    } else {
+      errors.push("Date of Birth is required.");
+    }
+
+    if (email.length === 0 || !email.includes("@")) {
+      errors.push("Enter a valid email address.");
+    }
+
+    if (errors.length > 0) {
+      alert(errors.join("\n"));
+      return false;
+    }
+    return true;
+  }
+  </script>
+</body>
+</html>

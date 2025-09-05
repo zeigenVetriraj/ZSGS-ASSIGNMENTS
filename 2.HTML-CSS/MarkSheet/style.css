@@ -1,0 +1,156 @@
+
+.outer-container {
+    border : 2px solid blue;
+    margin-left: 220px;
+    margin-right: 220px;
+    width: 960px;
+    background-color: rgb(201, 245, 255);
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.header-text {
+    text-align: center;
+}
+img {
+    height: 100px;
+    width: 100px;
+    margin: 0;
+    float: none;
+}
+
+
+.head-university-tamil,
+.head-university,
+.head-address {
+    margin: 0;
+    color : green;
+}
+.head-examination,
+.head-statement {
+    color: navy;
+}
+.head-university-tamil{
+    margin-top: 20px;
+    font-weight: 600;
+}
+.head-university {
+    font-weight: 600;
+    font-size: 28px;
+    margin-top: 2px;
+}
+.head-address {
+    font-weight: 600;
+}
+.head-examination {
+    font-weight: 600;
+    margin: 0px;
+    margin-top: 5px;
+}
+.head-statement {
+    font-weight: 600;
+    font-size: 22px;
+    margin: 10px 0px;
+    margin-bottom: 25px;
+}
+
+.table {
+    border: 1px solid black;
+}
+.table-1{
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0px;
+}
+.table-2{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0px;
+}
+.table-data{
+    border: 1px solid black;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.data-header{
+    font-weight: 600;
+    font-size: 12px;
+    margin: 20px;
+}
+.data-content{
+    font-size: 18px;
+    margin: 15px;
+}
+.serial-no{
+    font-size: 20px; 
+    background-color: rgb(253, 223, 207);
+}
+
+table {
+    position: relative;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    height: 500px;
+    background-color: rgb(201, 245, 255);
+    margin-bottom: 0px;
+    overflow: hidden;
+}
+
+table::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(Tamil_Nadu_Open_University_logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px 400px;
+    filter: blur(8px) opacity(0.2);
+    z-index: 0;
+    pointer-events: none;
+}
+
+table * {
+    position: relative;
+    z-index: 1;
+}
+th {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background: rgb(130, 208, 242);
+    color: black;
+}
+td{
+    border-bottom: none;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+.subject {
+    text-align: left;
+    padding-left: 10px;
+}
+.footer {
+    margin: 20px;
+    text-align: left;
+    font-size: 14px;
+}
+.pass-mark {
+    display: flex;
+    margin: none;
+}
+.footer p{
+    margin: 0px;
+}
+.signature {
+    text-align: right;
+    padding-right: 10px;
+}
