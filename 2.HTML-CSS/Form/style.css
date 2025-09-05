@@ -5,8 +5,8 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: rgb(249, 249, 249);
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  background-color: rgb(195, 167, 241);
   color: rgb(51, 51, 51);
   line-height: 1.6;
   padding: 40px;
@@ -35,6 +35,11 @@ label {
   color: rgb(68, 68, 68);
 }
 
+small {
+  color: red;
+  font-weight: 600;
+  margin-left: 4px;
+}
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -82,9 +87,15 @@ legend {
 
 input[type="file"] {
   margin-bottom: 20px;
+  padding: 5px;
+  font-size: 15px;
+  color: rgb(51, 51, 51);
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 5px;
 }
 
-input[type="submit"] {
+
+input[type="submit"],input[type="reset"], button {
   display: inline-block;
   background: rgb(51, 51, 51);
   color: rgb(255, 255, 255);
