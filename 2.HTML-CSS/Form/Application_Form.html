@@ -12,34 +12,34 @@
     <form action="/submit" method="post">
       
       <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" class="form-field" name="name" required autocomplete="name">
+        <label for="name">Name:<small>*</small></label>
+        <input type="text" id="name" class="form-field" name="name" placeholder="Enter your name" required>
       </div>
 
       <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" class="form-field" name="email" required autocomplete="email">
+        <label for="email">Email:<small>*</small></label>
+        <input type="email" id="email" class="form-field" name="email" placeholder="Enter your email" required>
       </div>
 
       <div class="form-group">
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" class="form-field" name="phone" required autocomplete="tel">
+        <label for="phone">Phone:<small>*</small></label>
+        <input type="tel" id="phone" class="form-field" name="phone" placeholder="Enter your phone number" required>
       </div>
 
       <div class="form-group">
-        <span>Gender:</span>
+        <span>Gender:<small>*</small></span>
         <label><input type="radio" name="gender" value="male" required> Male</label>
         <label><input type="radio" name="gender" value="female"> Female</label>
         <label><input type="radio" name="gender" value="other"> Other</label>
       </div>
 
       <div class="form-group">
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" class="form-field" name="dob" required autocomplete="bday">
+        <label for="dob">Date of Birth:<small>*</small></label>
+        <input type="date" id="dob" class="form-field" name="dob" required>
       </div>
 
       <div class="form-group">
-        <label for="nationality">Nationality:</label>
+        <label for="nationality">Nationality:<small>*</small></label>
         <select id="nationality" class="form-field" name="nationality" required>
           <option value="">Select...</option>
           <option value="indian">Indian</option>
@@ -50,7 +50,7 @@
       </div>
 
       <div class="form-group">
-        <label for="street-address">Address:</label>
+        <label for="street-address">Address:<small>*</small></label>
         <input type="text" id="street-address" name="street-address" class="form-field" placeholder="Address Line 1" required autocomplete="address-line1">
         <input type="text" name="address-line2" class="form-field" placeholder="Address Line 2" autocomplete="address-line2">
         <input type="text" name="city" class="form-field" placeholder="City" required autocomplete="address-level2">
@@ -59,8 +59,28 @@
       </div>
 
       <div class="form-group">
-        <input type="submit" value="Submit" onclick="validateForm()">
+        <label for="course">Course Applied For:<small>*</small></label>
+        <select id="course" class="form-field" name="course" required>
+          <option value="">Select...</option>
+          <option value="bca">BCA</option>
+          <option value="bcom">B.Com</option>
+          <option value="ba">B.A</option>
+          <option value="other">Other</option>
+        </select>
       </div>
+
+      <div class="form-group file-upload">
+        <label for="mark-sheet" class="file-label">📂 Upload Mark Sheet <small>*</small></label>
+        <input type="file" id="mark-sheet" class="file-input" name="mark-sheet" 
+              accept=".pdf,.jpg,.jpeg,.png" required>
+        <span class="file-name">No file chosen</span>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Submit" onclick="validateForm()">
+        <input type="reset" value="Reset">
+      </div>
+
     </form>
   </div>
 
@@ -74,6 +94,9 @@
 
     if (phone.length !== 10) {
       errors.push("Phone number must be exactly 10 digits.");
+    }
+    if(phone.isnumber === false){
+      errors.push("Phone number must contain only digits.");
     }
 
     if (dob) {
